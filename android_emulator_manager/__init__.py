@@ -1,6 +1,4 @@
 import os
-import sys
-import time
 
 def run(avd, port=5554):
     cmd = 'start emulator -avd {} -port {}'.format(avd, port)
