@@ -10,3 +10,10 @@ def stop(did=None):
     else:
         cmd = 'adb emu kill'
     os.system(cmd)
+
+def shutdown(did=None):
+    if did:
+        cmd = 'adb -s {} shutdown -p'.format(did)
+    else:
+        cmd = 'adb shutdown -p'
+    os.system(cmd)
