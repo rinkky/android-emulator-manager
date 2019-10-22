@@ -1,6 +1,6 @@
 # Android Emulator Manager
 
-Run and stop official android emulator on Windows.
+Manage official android emulator on Windows.
 
 ## setup
 
