@@ -1,5 +1,6 @@
 import os
 import re
+import time
 import subprocess
 
 from subprocess import Popen, PIPE
@@ -40,6 +41,16 @@ def available(did=None):
     except subprocess.TimeoutExpired:
         pass
     return False
+
+def wait_for_device(did=None, timeout=100):
+    _time_start = time.time()
+    while True:
+        if available(did):
+            return True
+        time.sleep(1)
+        if time.time() > _time_start + timeout:
+            did_str = '' if did is None else did
+            raise Exception('timeout when wait for device {}'.format(did_str))
 
 def is_in_use(did):
     """If the emulator is in use.
