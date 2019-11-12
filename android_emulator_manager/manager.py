@@ -5,8 +5,9 @@ import subprocess
 
 from subprocess import Popen, PIPE
 
-def run(avd, port=5554):
-    cmd = 'start emulator -avd {} -port {}'.format(avd, port)
+def run(avd, port=5554, wipe_data=False):
+    wipe_arg = '-wipe-data' if wipe_data else ''
+    cmd = 'start emulator -avd {} -port {} {}'.format(avd, port, wipe_arg)
     os.system(cmd)
 
 def stop(did=None):
