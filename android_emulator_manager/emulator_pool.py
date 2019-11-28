@@ -20,18 +20,18 @@ def get_all():
     
     returns:
     ```
-        {
-            'Android6.0': {
+        [
+            {
                 'id': 'emulator-5554',
                 'port': 5554,
                 'name': 'Android6.0',
                 'version': '6.0'
             },
-            'Android7.0' : {
+            {
                 ...
             },
             ...
-        }
+        ]
     ```
     """
     with open(pool_cfg_file) as file:
