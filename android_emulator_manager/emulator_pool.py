@@ -36,14 +36,15 @@ def get_all():
     """
     with open(pool_cfg_file) as file:
         cfg = YAML().load(file)
-    devices = list(cfg['devices'].values())
+    devices = cfg['devices']
     off_devices = []
     for device in devices:
+        device = dict(device)
         if not is_in_use(device['id']):
             off_devices.append(device)
     return off_devices
 
-def get_one():
+def get_one(version=None, id_=None):
     """get a device which is not turned on
     
     returns:
@@ -58,9 +59,13 @@ def get_one():
     """
     with open(pool_cfg_file) as file:
         cfg = YAML().load(file)
-    devices = list(cfg['devices'].values())
+    devices = cfg['devices']
     for device in devices:
         if not is_in_use(device['id']):
+            if version is not None and device['version'] != version:
+                continue
+            if id_ is not None and device['id'] != id_:
+                continue
             return dict(device)
     return None
 

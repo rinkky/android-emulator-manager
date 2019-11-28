@@ -1,22 +1,38 @@
 ---
 devices:
-  Android6.0:
-    id: emulator-5554
-    port: 5554
-    name: Android6.0
-    version: '6.0'
-  Android8.1:
-    id: emulator-5556
-    port: 5556
-    name: Android8.1
-    version: '8.1'
-  Android7.0:
-    id: emulator-5558
-    port: 5558
-    name: Android7.0
-    version: '7.0'
-  Android7.1.1:
-    id: emulator-5560
-    port: 5560
-    name: Android7.1.1
-    version: 7.1.1
+- id: emulator-5554
+  port: 5554
+  name: Android6.0
+  version: "6.0"
+- id: emulator-5556
+  port: 5556
+  name: Android8.1
+  version: "8.1"
+- id: emulator-5558
+  port: 5558
+  name: Android7.0
+  version: "7.0"
+- id: emulator-5560
+  port: 5560
+  name: Android9
+  version: "9"
+- id: emulator-5562
+  port: 5562
+  name: Android5.1
+  version: "5.1"
+- id: emulator-5564
+  port: 5564
+  name: Android5.0
+  version: "5.0"
+- id: emulator-5566
+  port: 5566
+  name: Android5.0
+  version: "4.4"
+- id: emulator-5568
+  port: 5568
+  name: Android7.1.1
+  version: "7.1.1"
+- id: emulator-5570
+  port: 5570
+  name: Android8.0
+  version: "8.0"
